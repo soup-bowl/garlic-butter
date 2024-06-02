@@ -48,7 +48,7 @@ class GameArtwork():
 				image = Image.open(image_binary)
 				images.append(image)
 			except Exception as e:
-				print(f"Failed to process image from {url}: {e}")
+				print(f"Failed to process image:\n {e}")
 		return images
 
 	def _fetch_image_as_binary(self, url):

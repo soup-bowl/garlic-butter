@@ -24,7 +24,6 @@ def main():
 		default=getcwd(),
 		help='The path to process. Defaults to the current directory.'
 	)
-	parser.add_argument('--type', type=str, help='Your console')
 
 	try:
 		args = parser.parse_args()
@@ -42,6 +41,8 @@ def main():
 	for root, dirs, files in walk(args.path):
 		dir = basename(normpath(root))
 		for file in files:
+			print(f"- Processing {file} in {root}")
+
 			file_path = join(root, file)
 			detected = game.detect_game(file_path, dir)
 
