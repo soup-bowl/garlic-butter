@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "garlic-butter"
+version = "0.1.0"
+description = "Artwork generator"
+authors = ["soup-bowl <code@soupbowl.io>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.scripts]
+app = "butter.cli:main"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyyaml = "^6.0.1"
+appdirs = "^1.4.4"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.2.2"
+pytest = "^8.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.format]
+indent-string = "\t"
+max-line-length = 120
+
+[tool.pylint.design]
+max-attributes = 10
