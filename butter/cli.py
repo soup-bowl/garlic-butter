@@ -5,6 +5,7 @@ from yaml import safe_load, YAMLError
 
 from butter.game import Game
 from butter.gamelist import GamelistLoader
+from butter.gameart import GameArtwork
 
 def get_config(file):
 	with open(file) as stream:
@@ -36,9 +37,12 @@ def main():
 	conf = get_config("butter/global.yaml")
 	possibles = GamelistLoader().load_data()
 	game = Game(possibles, conf)
+	image = GameArtwork()
 
 	for root, dirs, files in walk(args.path):
 		dir = basename(normpath(root))
 		for file in files:
 			file_path = join(root, file)
-			game.detect_game(file_path, dir)
+			detected = game.detect_game(file_path, dir)
+			image.create_image(game.generate_variants(detected[0]), f"{root}/Imgs", game.remove_ext(file))
+

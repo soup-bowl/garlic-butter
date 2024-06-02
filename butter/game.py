@@ -5,6 +5,9 @@ class Game():
 	def __init__(self, possibles, conf):
 		self.possibles = possibles
 		self.conf = conf
+	
+	def remove_ext(self, filename):
+		return splitext(basename(filename))[0]
 
 	def detect_game(self, file, folder):
 		filename = splitext(basename(file))[0]
