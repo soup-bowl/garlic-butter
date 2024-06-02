@@ -6,8 +6,27 @@
 
 A game art generator for SBC computing type devices. uses the **[Libretro Thumbnails](https://thumbnails.libretro.com/)** archive.
 
-> [!WARNING]  
+> [!WARNING]
 > This is **alpha software** - use at your own risk.
+
+## Running
+
+### Docker/Podman
+
+```
+docker run -v "$(pwd):/app" ghcr.io/soup-bowl/garlic-butter:latest /app --help
+```
+
+Works on both **AMD64** and **ARM64**.
+
+### Without
+
+To traditionally build and run, you will need **Python 3.12 or greater**, and **[Poetry](https://pypi.org/project/poetry/)**.
+
+```bash
+poetry install
+poetry run python -m butter --help
+```
 
 ## Related
 
