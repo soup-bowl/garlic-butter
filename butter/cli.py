@@ -44,5 +44,6 @@ def main():
 		for file in files:
 			file_path = join(root, file)
 			detected = game.detect_game(file_path, dir)
-			image.create_image(game.generate_variants(detected[0]), f"{root}/Imgs", game.remove_ext(file))
 
+			if detected is not None:
+				image.create_image(game.generate_variants(detected[0]), f"{root}/Imgs", game.remove_ext(file))

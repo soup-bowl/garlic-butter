@@ -14,11 +14,10 @@ class Game():
 		device = self.conf['alias'].get(folder, folder)
 		device_string = self.conf['consoles'].get(device)
 
-		print(f"File: {filename}, Device: {device_string}")
+		if device_string is None:
+			return None
 
 		result = [s for s in self.possibles if all(sub in s for sub in [quote(filename), quote(device_string)])]
-
-		print(result[0] if result is not None else "Blank!")
 
 		return result
 
