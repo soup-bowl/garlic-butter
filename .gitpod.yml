@@ -1,0 +1,9 @@
+image: gitpod/workspace-python:latest
+tasks:
+  - command: |
+      pipx install poetry
+      poetry install
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - ms-python.python
