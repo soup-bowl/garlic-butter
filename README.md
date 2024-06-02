@@ -14,7 +14,7 @@ A game art generator for SBC computing type devices. uses the **[Libretro Thumbn
 ### Docker/Podman
 
 ```
-docker run -v "$(pwd):/app" ghcr.io/soup-bowl/garlic-butter:latest /app --help
+docker run -it --rm -v "$(pwd):/app" ghcr.io/soup-bowl/garlic-butter:latest /app --help
 ```
 
 Works on both **AMD64** and **ARM64**.
