@@ -9,7 +9,7 @@ from butter.gamelist import GamelistLoader
 from butter.gameart import GameArtwork
 
 def get_config(file):
-	with open(file, encoding="utf-8") as stream:
+	with open(file) as stream:
 		try:
 			conf = safe_load(stream)
 		except YAMLError:
