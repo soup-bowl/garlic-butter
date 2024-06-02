@@ -104,7 +104,7 @@ def main():
 
 			detected = game.detect_game(file_path, game_dir)
 
-			if detected is not None:
+			if detected is not None and len(detected) > 0:
 				selected = None
 				if args.interactive:
 					selected = get_user_choice(detected)
