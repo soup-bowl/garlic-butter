@@ -18,3 +18,22 @@ class Game():
 		print(result[0] if result is not None else "Blank!")
 
 		return result
+
+	def generate_variants(self, url):
+		variants = ["Named_Boxarts", "Named_Snaps", "Named_Titles"]
+		
+		current_variant = None
+		for variant in variants:
+			if variant in url:
+				current_variant = variant
+				break
+		
+		modified_urls = []
+		if current_variant:
+			for variant in variants:
+				modified_url = url.replace(current_variant, variant)
+				modified_urls.append(modified_url)
+		else:
+			modified_urls.append(url)
+		
+		return modified_urls
