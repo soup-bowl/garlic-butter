@@ -10,7 +10,7 @@ class Game():
 		return splitext(basename(filename))[0]
 
 	def detect_game(self, file, folder):
-		filename = splitext(basename(file))[0]
+		filename = self.remove_ext(file)
 		device = self.conf['alias'].get(folder, folder)
 		device_string = self.conf['consoles'].get(device)
 

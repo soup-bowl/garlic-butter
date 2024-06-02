@@ -9,7 +9,7 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "butter",
-			"args": ["./tests/Games"]
+			"args": ["./tests/Games", "--interactive"]
 		}
 	]
 }
