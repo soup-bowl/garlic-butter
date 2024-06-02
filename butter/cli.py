@@ -61,17 +61,17 @@ def main():
 		'path',
 		nargs='?',
 		default=getcwd(),
-		help='The path to process. Defaults to the current directory.'
+		help='The path to process. Defaults to the current directory'
 	)
 	parser.add_argument(
 		'--interactive', '-i',
 		action='store_true',
-		help='Ask for decisions, otherwise nearest is chosen.'
+		help='Ask for decisions, otherwise nearest is chosen'
 	)
 	parser.add_argument(
 		'--replace', '-r',
 		action='store_true',
-		help='Replaces all, ignoring existing generations.'
+		help='Replaces all, ignoring existing generations'
 	)
 
 	try:
