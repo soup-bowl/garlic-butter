@@ -3,6 +3,7 @@ from argparse import ArgumentParser
 from os import walk, getcwd
 from os.path import basename, normpath, join
 from urllib.parse import unquote, urlparse
+import PIL
 from yaml import safe_load, YAMLError
 
 from butter.game import Game
@@ -109,10 +110,13 @@ def main():
 				if args.interactive:
 					selected = get_user_choice(detected)
 
-				image.create_image(
-					game.generate_variants(detected[selected] if selected is not None else detected[0]),
-					f"{root}/Imgs",
-					game.remove_ext(file)
-				)
+				try:
+					image.create_image(
+						game.generate_variants(detected[selected] if selected is not None else detected[0]),
+						f"{root}/Imgs",
+						game.remove_ext(file)
+					)
+				except PIL.UnidentifiedImageError as e:
+					print("An image error occurred while processing.")
 			else:
 				print("No results found.")
