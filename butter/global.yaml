@@ -45,7 +45,7 @@ consoles:
   PC98: "NEC - PC-98"
   PCFX: "NEC - PC-FX"
   FamicomDiskSystem: "Nintendo - Family Computer Disk System"
-  GameBoy: "Nintendo - Game Boy"
+  GB: "Nintendo - Game Boy"
   GBA: "Nintendo - Game Boy Advance"
   GBC: "Nintendo - Game Boy Color"
   GC: "Nintendo - GameCube"

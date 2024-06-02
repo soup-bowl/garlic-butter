@@ -42,5 +42,3 @@ def main():
 		for file in files:
 			file_path = join(root, file)
 			game.detect_game(file_path, dir)
-
-	print(f"Hello")

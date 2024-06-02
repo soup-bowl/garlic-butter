@@ -9,7 +9,7 @@
 			"type": "debugpy",
 			"request": "launch",
 			"module": "butter",
-			"args": ["/home/casey/Downloads/Games"]
+			"args": ["./tests/Games"]
 		}
 	]
 }
