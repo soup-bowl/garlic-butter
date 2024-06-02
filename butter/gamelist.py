@@ -31,9 +31,9 @@ class GamelistLoader:
 		return lines
 
 	def _download_file(self, dest_path):
-		response = requests.get(self.url)
+		response = requests.get(self.url, timeout=15)
 		response.raise_for_status()
-		with open(dest_path, 'wb') as f:
+		with open(dest_path, 'wb', encoding="utf-8") as f:
 			f.write(response.content)
 
 	def _extract_zip(self, zip_path, extract_to):
@@ -41,7 +41,7 @@ class GamelistLoader:
 			zip_ref.extractall(extract_to)
 
 	def _load_lines_from_file(self, file_path):
-		with open(file_path, 'r') as f:
+		with open(file_path, 'r', encoding="utf-8") as f:
 			lines = f.readlines()
 
 		return [line.strip() for line in lines]

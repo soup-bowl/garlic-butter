@@ -12,4 +12,4 @@ class GameListTest(unittest.TestCase):
 		assert needle in haystack, f"'{needle}' not found in the array"
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

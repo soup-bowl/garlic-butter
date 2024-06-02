@@ -1,6 +1,4 @@
-from io import BytesIO
 import unittest
-from PIL import Image
 from PIL.PngImagePlugin import PngImageFile
 
 from butter.cli import get_config
@@ -31,4 +29,4 @@ class GameListTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

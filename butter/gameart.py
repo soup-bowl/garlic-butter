@@ -1,8 +1,8 @@
-import requests
-from PIL import Image
 from io import BytesIO
 from os.path import exists
 from os import makedirs
+import requests
+from PIL import Image
 
 class GameArtwork():
 	def create_image(self, image_urls, directory, filename):
@@ -10,7 +10,7 @@ class GameArtwork():
 		images = self.convert_urls_to_images(image_urls)
 
 		if len(images) < 2:
-			return None
+			return False
 
 		# Load the images from binary data
 		background_image = images[1]
@@ -40,6 +40,8 @@ class GameArtwork():
 			makedirs(directory)
 		new_image.save(f"{directory}/{filename}.png")
 
+		return True
+
 	def convert_urls_to_images(self, urls):
 		images = []
 		for url in urls:
@@ -47,11 +49,11 @@ class GameArtwork():
 				image_binary = self._fetch_image_as_binary(url)
 				image = Image.open(image_binary)
 				images.append(image)
-			except Exception as e:
+			except requests.exceptions.RequestException as e:
 				print(f"Failed to process image:\n {e}")
 		return images
 
 	def _fetch_image_as_binary(self, url):
-		response = requests.get(url)
+		response = requests.get(url, timeout=10)
 		response.raise_for_status()
 		return BytesIO(response.content)

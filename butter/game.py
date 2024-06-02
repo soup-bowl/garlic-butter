@@ -5,7 +5,7 @@ class Game():
 	def __init__(self, possibles, conf):
 		self.possibles = possibles
 		self.conf = conf
-	
+
 	def remove_ext(self, filename):
 		return splitext(basename(filename))[0]
 
@@ -23,13 +23,13 @@ class Game():
 
 	def generate_variants(self, url):
 		variants = ["Named_Boxarts", "Named_Snaps", "Named_Titles"]
-		
+
 		current_variant = None
 		for variant in variants:
 			if variant in url:
 				current_variant = variant
 				break
-		
+
 		modified_urls = []
 		if current_variant:
 			for variant in variants:
@@ -37,5 +37,5 @@ class Game():
 				modified_urls.append(modified_url)
 		else:
 			modified_urls.append(url)
-		
+
 		return modified_urls

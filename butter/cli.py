@@ -1,3 +1,4 @@
+import sys
 from argparse import ArgumentParser
 from os import walk, getcwd
 from os.path import basename, normpath, join
@@ -8,11 +9,11 @@ from butter.gamelist import GamelistLoader
 from butter.gameart import GameArtwork
 
 def get_config(file):
-	with open(file) as stream:
+	with open(file, encoding="utf-8") as stream:
 		try:
 			conf = safe_load(stream)
-		except YAMLError as exc:
-			exit(2)
+		except YAMLError:
+			sys.exit(2)
 
 	return conf
 
@@ -30,7 +31,7 @@ def main():
 	except SystemExit as e:
 		if e.code != 0:
 			parser.print_help()
-		exit(1)
+		sys.exit(1)
 
 	# aaa
 	conf = get_config("butter/global.yaml")
@@ -39,12 +40,12 @@ def main():
 	image = GameArtwork()
 
 	for root, dirs, files in walk(args.path):
-		dir = basename(normpath(root))
+		game_dir = basename(normpath(root))
 		for file in files:
 			print(f"- Processing {file} in {root}")
 
 			file_path = join(root, file)
-			detected = game.detect_game(file_path, dir)
+			detected = game.detect_game(file_path, game_dir)
 
 			if detected is not None:
 				image.create_image(game.generate_variants(detected[0]), f"{root}/Imgs", game.remove_ext(file))

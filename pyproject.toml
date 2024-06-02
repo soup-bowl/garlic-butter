@@ -31,3 +31,6 @@ max-line-length = 120
 
 [tool.pylint.design]
 max-attributes = 10
+
+[tool.pylint.logging]
+disable = ["C0114", "C0115", "C0116"]
