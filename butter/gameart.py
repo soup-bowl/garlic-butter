@@ -26,11 +26,13 @@ class GameArtwork():
 		# Paste the background image onto the new image
 		new_image.paste(background_image, bg_position, background_image.convert("RGBA"))
 
-		# Resize box art
-		foreground_image = foreground_image.resize((100, 100))
+		# Resize the foreground image while maintaining its aspect ratio
+		fg_width = 100
+		fg_height = int((fg_width / foreground_image.width) * foreground_image.height)
+		foreground_image = foreground_image.resize((fg_width, fg_height), Image.LANCZOS)
 
 		# Calculate the position to place the foreground image at the bottom left with a 10px margin
-		fg_position = (10, 250 - 100 - 10)
+		fg_position = (10, 250 - fg_height - 10)
 
 		# Paste the foreground image onto the new image
 		new_image.paste(foreground_image, fg_position, foreground_image.convert("RGBA"))
