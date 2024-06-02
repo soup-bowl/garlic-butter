@@ -1,4 +1,4 @@
-from os.path import splitext, basename
+from os.path import splitext, basename, exists
 from urllib.parse import quote
 
 class Game():
@@ -8,6 +8,13 @@ class Game():
 
 	def remove_ext(self, filename):
 		return splitext(basename(filename))[0]
+
+	def check_for_existing(self, filepath, replace):
+		if not replace and exists(filepath):
+			print("Artwork already exists.")
+			return True
+
+		return False
 
 	def detect_game(self, file, folder):
 		filename = self.remove_ext(file)

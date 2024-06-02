@@ -68,6 +68,11 @@ def main():
 		action='store_true',
 		help='Ask for decisions, otherwise nearest is chosen.'
 	)
+	parser.add_argument(
+		'--replace', '-r',
+		action='store_true',
+		help='Replaces all, ignoring existing generations.'
+	)
 
 	try:
 		args = parser.parse_args()
@@ -92,6 +97,11 @@ def main():
 			print(f"- Processing {file} in {root}")
 
 			file_path = join(root, file)
+
+			check = game.check_for_existing(f"{root}/Imgs/{game.remove_ext(file)}.png", args.replace)
+			if check:
+				continue
+
 			detected = game.detect_game(file_path, game_dir)
 
 			if detected is not None:
