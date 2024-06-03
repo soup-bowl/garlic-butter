@@ -6,9 +6,9 @@ from urllib.parse import unquote, urlparse
 import PIL
 from yaml import safe_load, YAMLError
 
-from butter.game import Game
-from butter.gamelist import GamelistLoader
-from butter.gameart import GameArtwork
+from butter.game import check_for_existing, detect_game, generate_variants, remove_ext
+from butter.game_list import GamelistLoader
+from butter.game_art import create_image
 
 def get_config(file):
 	with open(file) as stream:
@@ -85,8 +85,6 @@ def main():
 	# aaa
 	conf = get_config("butter/global.yaml")
 	possibles = GamelistLoader().load_data()
-	game = Game(possibles, conf)
-	image = GameArtwork()
 
 	for root, dirs, files in walk(args.path):
 		game_dir = basename(normpath(root))
@@ -99,11 +97,11 @@ def main():
 
 			file_path = join(root, file)
 
-			check = game.check_for_existing(f"{root}/Imgs/{game.remove_ext(file)}.png", args.replace)
+			check = check_for_existing(f"{root}/Imgs/{remove_ext(file)}.png", args.replace)
 			if check:
 				continue
 
-			detected = game.detect_game(file_path, game_dir)
+			detected = detect_game(file_path, game_dir, possibles, conf)
 
 			if detected is not None and len(detected) > 0:
 				selected = None
@@ -111,10 +109,10 @@ def main():
 					selected = get_user_choice(detected)
 
 				try:
-					image.create_image(
-						game.generate_variants(detected[selected] if selected is not None else detected[0]),
+					create_image(
+						generate_variants(detected[selected] if selected is not None else detected[0]),
 						f"{root}/Imgs",
-						game.remove_ext(file)
+						remove_ext(file)
 					)
 				except PIL.UnidentifiedImageError as e:
 					print("An image error occurred while processing.")

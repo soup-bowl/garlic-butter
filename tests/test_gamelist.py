@@ -1,6 +1,6 @@
 import unittest
 
-from butter.gamelist import GamelistLoader
+from butter.game_list import GamelistLoader
 
 class GameListTest(unittest.TestCase):
 	def setUp(self):
