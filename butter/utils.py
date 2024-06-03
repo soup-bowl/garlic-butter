@@ -1,4 +1,7 @@
+from os import walk
+from posixpath import splitext
 import sys
+from os.path import basename, normpath, join
 from yaml import YAMLError, safe_load
 
 

@@ -112,3 +112,55 @@ alias:
   Nintendo: NES
   Super Nintendo: SNES
   PlayStation: PS1
+
+include:
+  filetypes:
+    - .zip
+    - .chd
+    - .bin
+    - .a52
+    - .a78
+    - .j64
+    - .jag
+    - .lnx
+    - .nes
+    - .fds
+    - .smc
+    - .sfc
+    - .n64
+    - .v64
+    - .z64
+    - .gb
+    - .gbc
+    - .gba
+    - .nds
+    - .3ds
+    - .cia
+    - .iso
+    - .gcm
+    - .wbfs
+    - .wad
+    - .wux
+    - .wud
+    - .rpx
+    - .sms
+    - .gen
+    - .md
+    - .smd
+    - .cue
+    - .32x
+    - .cdi
+    - .gdi
+    - .neo
+    - .col
+    - .int
+    - .pce
+    - .vpk
+    - .d64
+    - .t64
+    - .prg
+    - .tap
+    - .tzx
+    - .z80
+    - .7z
+    - .rar

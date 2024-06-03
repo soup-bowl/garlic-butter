@@ -1,3 +1,4 @@
+from posixpath import splitext
 import sys
 from os import walk
 from os.path import basename, normpath, join
@@ -24,6 +25,10 @@ def main():
 			continue
 
 		for file in files:
+			file_ext = splitext(file)[1].lower()
+			if file_ext not in conf['include']['filetypes']:
+				continue
+
 			print(f"- Processing {file} in {root}")
 
 			file_path = join(root, file)
