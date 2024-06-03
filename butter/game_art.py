@@ -3,17 +3,21 @@ from os.path import exists
 from os import makedirs
 import requests
 from PIL import Image
+from PIL.Image import Resampling
 
 def create_image(image_urls, directory, filename):
 	new_image = Image.new("RGBA", (250, 250), (255, 255, 255, 0))
-	images = convert_urls_to_images(image_urls)
 
-	if len(images) < 2:
+	if "Named_Snaps" not in image_urls and "Named_Boxarts" not in image_urls:
+		print("The required images are not present.")
 		return False
 
 	# Load the images from binary data
-	background_image = images[1]
-	foreground_image = images[0]
+	background_image = convert_url_to_image(image_urls["Named_Snaps"])
+	foreground_image = convert_url_to_image(image_urls["Named_Boxarts"])
+
+	if (background_image is None or foreground_image is None):
+		return False
 
 	# Create a new image with dimensions 250x250 with a transparent background
 	new_image = Image.new("RGBA", (250, 250), (255, 255, 255, 0))
@@ -28,7 +32,7 @@ def create_image(image_urls, directory, filename):
 	# Resize the foreground image while maintaining its aspect ratio
 	fg_width = 100
 	fg_height = int((fg_width / foreground_image.width) * foreground_image.height)
-	foreground_image = foreground_image.resize((fg_width, fg_height), Image.LANCZOS)
+	foreground_image = foreground_image.resize((fg_width, fg_height), Resampling.LANCZOS)
 
 	# Calculate the position to place the foreground image at the bottom left with a 10px margin
 	fg_position = (10, 250 - fg_height - 10)
@@ -43,18 +47,17 @@ def create_image(image_urls, directory, filename):
 
 	return True
 
-def convert_urls_to_images( urls):
+def convert_url_to_image(url):
 	def fetch_image_as_binary(url):
 		response = requests.get(url, timeout=10)
 		response.raise_for_status()
 		return BytesIO(response.content)
 
-	images = []
-	for url in urls:
-		try:
-			image_binary = fetch_image_as_binary(url)
-			image = Image.open(image_binary)
-			images.append(image)
-		except requests.exceptions.RequestException as e:
-			print(f"Failed to process image:\n {e}")
-	return images
+	try:
+		image_binary = fetch_image_as_binary(url)
+		image = Image.open(image_binary)
+		return image
+	except requests.exceptions.RequestException as e:
+		print(f"Failed to process image:\n {e}")
+
+	return None

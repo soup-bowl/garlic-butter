@@ -32,12 +32,13 @@ def generate_variants(url):
 			current_variant = variant
 			break
 
-	modified_urls = []
+	modified_urls = {}
 	if current_variant:
 		for variant in variants:
 			modified_url = url.replace(current_variant, variant)
-			modified_urls.append(modified_url)
+			modified_urls[variant] = modified_url
 	else:
-		modified_urls.append(url)
+		for variant in variants:
+			modified_urls[variant] = url
 
 	return modified_urls

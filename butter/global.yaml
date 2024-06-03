@@ -69,7 +69,7 @@ consoles:
   NeoGeoPocket: "SNK - Neo Geo Pocket"
   NeoGeoPocketColor: "SNK - Neo Geo Pocket Color"
   Sega32X: "Sega - 32X"
-  Dreamcast: "Sega - Dreamcast"
+  DC: "Sega - Dreamcast"
   GG: "Sega - Game Gear"
   MS: "Sega - Master System - Mark III"
   MD: "Sega - Mega Drive - Genesis"

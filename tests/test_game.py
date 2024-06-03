@@ -15,8 +15,12 @@ class GameTest(unittest.TestCase):
 		assert self.value in detections, f"'{self.value}' not found in the array"
 
 	def test_game_string_split(self):
-		strings = generate_variants(self.value)
-		assert len(strings) == 3
+		result_with_variant = generate_variants(self.value)
+		assert "Named_Boxarts" in result_with_variant
+		assert "Named_Snaps" in result_with_variant
+		assert "Named_Titles" in result_with_variant
+		assert result_with_variant["Named_Boxarts"] == self.value
+
 
 if __name__ == '__main__':
 	unittest.main()
