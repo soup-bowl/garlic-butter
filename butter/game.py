@@ -12,16 +12,17 @@ def check_for_existing(filepath, replace):
 	return False
 
 def detect_game(file, folder, possibles, conf):
-	filename = remove_ext(file)
+	filename = quote(remove_ext(file))
 	device = conf['alias'].get(folder, folder)
 	device_entry = conf['consoles'].get(device)
 
 	if device_entry is None or 'retroarch' not in device_entry:
 		return None
 
-	device_string = device_entry['retroarch']
+	device_string = quote(device_entry['retroarch'])
 
-	result = [s for s in possibles if all(sub in s for sub in [quote(filename), quote(device_string)])]
+	possibles_set = set(possibles)
+	result = [s for s in possibles_set if all(sub in s for sub in [filename, device_string])]
 
 	return {
 		"results": result,

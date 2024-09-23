@@ -32,7 +32,7 @@ def main():
 
 			detected = detect_game(file_path, game_dir, possibles, conf)
 
-			directory = 'Imgs' if args.interactive is not None else f"{detected['muos']}/box" 
+			directory = f"../info/catalogue/{detected['muos']}/box" if args.muos is True else 'Imgs' 
 
 			check = check_for_existing(f"{root}/{directory}/{remove_ext(file)}.png", args.replace)
 			if check:

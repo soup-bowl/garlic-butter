@@ -164,4 +164,5 @@ cython_debug/
 # Custom
 .DS_Store
 tests/Games/*/Imgs
+tests/Games/info
 muos
