@@ -21,6 +21,11 @@ def get_args():
 		action='store_true',
 		help='Replaces all, ignoring existing generations'
 	)
+	parser.add_argument(
+		'--muos', '-m',
+		action='store_true',
+		help='Use MuOS artwork catalogue format'
+	)
 
 	try:
 		return parser.parse_args()

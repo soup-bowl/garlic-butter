@@ -14,14 +14,19 @@ def check_for_existing(filepath, replace):
 def detect_game(file, folder, possibles, conf):
 	filename = remove_ext(file)
 	device = conf['alias'].get(folder, folder)
-	device_string = conf['consoles'].get(device)
+	device_entry = conf['consoles'].get(device)
 
-	if device_string is None:
+	if device_entry is None or 'retroarch' not in device_entry:
 		return None
+
+	device_string = device_entry['retroarch']
 
 	result = [s for s in possibles if all(sub in s for sub in [quote(filename), quote(device_string)])]
 
-	return result
+	return {
+		"results": result,
+		"muos": device_entry['muos']
+	}
 
 def generate_variants(url):
 	variants = ["Named_Boxarts", "Named_Snaps", "Named_Titles"]

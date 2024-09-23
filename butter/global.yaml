@@ -1,99 +1,245 @@
 consoles:
-  CPC: "Amstrad - CPC"
-  GX4000: "Amstrad - GX4000"
-  Arduboy: "Arduboy Inc - Arduboy"
-  Atari2600: "Atari - 2600"
-  Atari5200: "Atari - 5200"
-  Atari7800: "Atari - 7800"
-  Atari8bit: "Atari - 8-bit"
-  Jaguar: "Atari - Jaguar"
-  Lynx: "Atari - Lynx"
-  AtariST: "Atari - ST"
-  Atomiswave: "Atomiswave"
-  WonderSwan: "Bandai - WonderSwan"
-  WonderSwanColor: "Bandai - WonderSwan Color"
-  Loopy: "Casio - Loopy"
-  PV1000: "Casio - PV-1000"
-  ColecoVision: "Coleco - ColecoVision"
-  C64: "Commodore - 64"
-  Amiga: "Commodore - Amiga"
-  CD32: "Commodore - CD32"
-  CDTV: "Commodore - CDTV"
-  PET: "Commodore - PET"
-  Plus4: "Commodore - Plus-4"
-  VIC20: "Commodore - VIC-20"
-  Arcadia2001: "Emerson - Arcadia 2001"
-  AdventureVision: "Entex - Adventure Vision"
-  SuperCassetteVision: "Epoch - Super Cassette Vision"
-  ArcadeGames: "FBNeo - Arcade Games"
-  ChannelF: "Fairchild - Channel F"
-  SuperAcan: "Funtech - Super Acan"
-  Vectrex: "GCE - Vectrex"
-  GP32: "GamePark - GP32"
-  GameMaster: "Hartung - Game Master"
-  Leapster: "LeapFrog - Leapster Learning Game System"
-  Odyssey2: "Magnavox - Odyssey2"
-  Intellivision: "Mattel - Intellivision"
-  MSX: "Microsoft - MSX"
-  MSX2: "Microsoft - MSX2"
-  Xbox: "Microsoft - Xbox"
-  Xbox360: "Microsoft - Xbox 360"
-  PCEngine: "NEC - PC Engine - TurboGrafx 16"
-  PCEngineCD: "NEC - PC Engine CD - TurboGrafx-CD"
-  PCEngineSuperGrafx: "NEC - PC Engine SuperGrafx"
-  PC8001: "NEC - PC-8001 - PC-8801"
-  PC98: "NEC - PC-98"
-  PCFX: "NEC - PC-FX"
-  FamicomDiskSystem: "Nintendo - Family Computer Disk System"
-  GB: "Nintendo - Game Boy"
-  GBA: "Nintendo - Game Boy Advance"
-  GBC: "Nintendo - Game Boy Color"
-  GC: "Nintendo - GameCube"
-  3DS: "Nintendo - Nintendo 3DS"
-  N64: "Nintendo - Nintendo 64"
-  N64DD: "Nintendo - Nintendo 64DD"
-  DS: "Nintendo - Nintendo DS"
-  DSi: "Nintendo - Nintendo DSi"
-  NES: "Nintendo - Nintendo Entertainment System"
-  PokemonMini: "Nintendo - Pokemon Mini"
-  Satellaview: "Nintendo - Satellaview"
-  SufamiTurbo: "Nintendo - Sufami Turbo"
-  SNES: "Nintendo - Super Nintendo Entertainment System"
-  VirtualBoy: "Nintendo - Virtual Boy"
-  Wii: "Nintendo - Wii"
-  WiiU: "Nintendo - Wii U"
-  CDi: "Philips - CD-i"
-  VideopacPlus: "Philips - Videopac+"
-  NeoGeo: "SNK - Neo Geo"
-  NeoGeoCD: "SNK - Neo Geo CD"
-  NeoGeoPocket: "SNK - Neo Geo Pocket"
-  NeoGeoPocketColor: "SNK - Neo Geo Pocket Color"
-  Sega32X: "Sega - 32X"
-  DC: "Sega - Dreamcast"
-  GG: "Sega - Game Gear"
-  MS: "Sega - Master System - Mark III"
-  MD: "Sega - Mega Drive - Genesis"
-  MegaCD: "Sega - Mega-CD - Sega CD"
-  Naomi: "Sega - Naomi"
-  Naomi2: "Sega - Naomi 2"
-  Pico: "Sega - PICO"
-  SG1000: "Sega - SG-1000"
-  Saturn: "Sega - Saturn"
-  X1: "Sharp - X1"
-  X68000: "Sharp - X68000"
-  ZX81: "Sinclair - ZX 81"
-  ZXSpectrum: "Sinclair - ZX Spectrum"
-  PS1: "Sony - PlayStation"
-  PS2: "Sony - PlayStation 2"
-  PS3: "Sony - PlayStation 3"
-  PS4: "Sony - PlayStation 4"
-  PSP: "Sony - PlayStation Portable"
-  PSV: "Sony - PlayStation Vita"
-  SVI318: "Spectravideo - SVI-318 - SVI-328"
-  3DO: "The 3DO Company - 3DO"
-  CreatiVision: "VTech - CreatiVision"
-  VSmile: "VTech - V.Smile"
-  Supervision: "Watara - Supervision"
+  CPC:
+    retroarch: "Amstrad - CPC"
+    muos: "Amstrad"
+  GX4000:
+    retroarch: "Amstrad - GX4000"
+  Arduboy:
+    retroarch: "Arduboy Inc - Arduboy"
+    muos: "Arduboy"
+  Atari2600:
+    retroarch: "Atari - 2600"
+    muos: "Atari 2600"
+  Atari5200:
+    retroarch: "Atari - 5200"
+    muos: "Atari 5200"
+  Atari7800:
+    retroarch: "Atari - 7800"
+    muos: "Atari 7800"
+  Atari8bit:
+    retroarch: "Atari - 8-bit"
+  Jaguar:
+    retroarch: "Atari - Jaguar"
+    muos: "Atari Jaguar"
+  Lynx:
+    retroarch: "Atari - Lynx"
+    muos: "Atari Lynx"
+  AtariST:
+    retroarch: "Atari - ST"
+    muos: "Atari ST-STE-TT-Falcon"
+  Atomiswave:
+    retroarch: "Atomiswave"
+    muos: "Sega Atomiswave Naomi"
+  WonderSwan:
+    retroarch: "Bandai - WonderSwan"
+    muos: "Bandai WonderSwan-Color"
+  WonderSwanColor:
+    retroarch: "Bandai - WonderSwan Color"
+  Loopy:
+    retroarch: "Casio - Loopy"
+  PV1000:
+    retroarch: "Casio - PV-1000"
+  ColecoVision:
+    retroarch: "Coleco - ColecoVision"
+    muos: "ColecoVision"
+  C64:
+    retroarch: "Commodore - 64"
+    muos: "Commodore C64"
+  Amiga:
+    retroarch: "Commodore - Amiga"
+    muos: "Commodore Amiga"
+  CD32:
+    retroarch: "Commodore - CD32"
+  CDTV:
+    retroarch: "Commodore - CDTV"
+  PET:
+    retroarch: "Commodore - PET"
+    muos: "Commodore PET"
+  Plus4:
+    retroarch: "Commodore - Plus-4"
+  VIC20:
+    retroarch: "Commodore - VIC-20"
+    muos: "Commodore VIC-20"
+  Arcadia2001:
+    retroarch: "Emerson - Arcadia 2001"
+  AdventureVision:
+    retroarch: "Entex - Adventure Vision"
+  SuperCassetteVision:
+    retroarch: "Epoch - Super Cassette Vision"
+  ArcadeGames:
+    retroarch: "FBNeo - Arcade Games"
+    muos: "Arcade"
+  ChannelF:
+    retroarch: "Fairchild - Channel F"
+    muos: "Fairchild ChannelF"
+  SuperAcan:
+    retroarch: "Funtech - Super Acan"
+  Vectrex:
+    retroarch: "GCE - Vectrex"
+    muos: "GCE - Vectrex"
+  GP32:
+    retroarch: "GamePark - GP32"
+  GameMaster:
+    retroarch: "Hartung - Game Master"
+  Leapster:
+    retroarch: "LeapFrog - Leapster Learning Game System"
+  Odyssey2:
+    retroarch: "Magnavox - Odyssey2"
+  Intellivision:
+    retroarch: "Mattel - Intellivision"
+    muos: "Mattel - Intellivision"
+  MSX:
+    retroarch: "Microsoft - MSX"
+    muos: "Microsoft - MSX"
+  MSX2:
+    retroarch: "Microsoft - MSX2"
+  Xbox:
+    retroarch: "Microsoft - Xbox"
+  Xbox360:
+    retroarch: "Microsoft - Xbox 360"
+  PCEngine:
+    retroarch: "NEC - PC Engine - TurboGrafx 16"
+    muos: "NEC PC Engine"
+  PCEngineCD:
+    retroarch: "NEC - PC Engine CD - TurboGrafx-CD"
+  PCEngineSuperGrafx:
+    retroarch: "NEC - PC Engine SuperGrafx"
+    muos: "NEC PC Engine SuperGrafx"
+  PC8001:
+    retroarch: "NEC - PC-8001 - PC-8801"
+    muos: "NEC PC-8000 - PC-8800 series"
+  PC98:
+    retroarch: "NEC - PC-98"
+    muos: "NEC PC98"
+  PCFX:
+    retroarch: "NEC - PC-FX"
+    muos: "NEC PC-FX"
+  FamicomDiskSystem:
+    retroarch: "Nintendo - Family Computer Disk System"
+  GB:
+    retroarch: "Nintendo - Game Boy"
+    muos: "Nintendo Game Boy"
+  GBA:
+    retroarch: "Nintendo - Game Boy Advance"
+    muos: "Nintendo Game Boy Advance"
+  GBC:
+    retroarch: "Nintendo - Game Boy Color"
+    muos: "Nintendo Game Boy Color"
+  GC:
+    retroarch: "Nintendo - GameCube"
+  3DS:
+    retroarch: "Nintendo - Nintendo 3DS"
+  N64:
+    retroarch: "Nintendo - Nintendo 64"
+    muos: "Nintendo N64"
+  N64DD:
+    retroarch: "Nintendo - Nintendo 64DD"
+  DS:
+    retroarch: "Nintendo - Nintendo DS"
+    muos: "Nintendo DS"
+  DSi:
+    retroarch: "Nintendo - Nintendo DSi"
+  NES:
+    retroarch: "Nintendo - Nintendo Entertainment System"
+    muos: "Nintendo NES-Famicom"
+  PokemonMini:
+    retroarch: "Nintendo - Pokemon Mini"
+    muos: "Nintendo Pokemon Mini"
+  Satellaview:
+    retroarch: "Nintendo - Satellaview"
+  SufamiTurbo:
+    retroarch: "Nintendo - Sufami Turbo"
+  SNES:
+    retroarch: "Nintendo - Super Nintendo Entertainment System"
+    muos: "Nintendo SNES-SFC"
+  VirtualBoy:
+    retroarch: "Nintendo - Virtual Boy"
+    muos: "Nintendo Virtual Boy"
+  Wii:
+    retroarch: "Nintendo - Wii"
+  WiiU:
+    retroarch: "Nintendo - Wii U"
+  CDi:
+    retroarch: "Philips - CD-i"
+    muos: "Philips CDi"
+  VideopacPlus:
+    retroarch: "Philips - Videopac+"
+  NeoGeo:
+    retroarch: "SNK - Neo Geo"
+    muos: "SNK Neo Geo"
+  NeoGeoCD:
+    retroarch: "SNK - Neo Geo CD"
+    muos: "SNK Neo Geo CD"
+  NeoGeoPocket:
+    retroarch: "SNK - Neo Geo Pocket"
+  NeoGeoPocketColor:
+    retroarch: "SNK - Neo Geo Pocket Color"
+    muos: "SNK Neo Geo Pocket - Color"
+  Sega32X:
+    retroarch: "Sega - 32X"
+    muos: "Sega 32X"
+  DC:
+    retroarch: "Sega - Dreamcast"
+    muos: "Sega Dreamcast"
+  GG:
+    retroarch: "Sega - Game Gear"
+    muos: "Sega Game Gear"
+  MS:
+    retroarch: "Sega - Master System - Mark III"
+    muos: "Sega Master System"
+  MD:
+    retroarch: "Sega - Mega Drive - Genesis"
+    muos: "Sega Mega Drive - Genesis"
+  MegaCD:
+    retroarch: "Sega - Mega-CD - Sega CD"
+    muos: "Sega Mega CD - Sega CD"
+  Naomi:
+    retroarch: "Sega - Naomi"
+  Naomi2:
+    retroarch: "Sega - Naomi 2"
+  Pico:
+    retroarch: "Sega - PICO"
+  SG1000:
+    retroarch: "Sega - SG-1000"
+  Saturn:
+    retroarch: "Sega - Saturn"
+    muos: "Sega Saturn"
+  X1:
+    retroarch: "Sharp - X1"
+    muos: "Sharp X1"
+  X68000:
+    retroarch: "Sharp - X68000"
+    muos: "Sharp X68000"
+  ZX81:
+    retroarch: "Sinclair - ZX 81"
+    muos: "Sinclair ZX 81"
+  ZXSpectrum:
+    retroarch: "Sinclair - ZX Spectrum"
+    muos: "Sinclair ZX Spectrum"
+  PS1:
+    retroarch: "Sony - PlayStation"
+    muos: "Sony PlayStation"
+  PS2:
+    retroarch: "Sony - PlayStation 2"
+  PS3:
+    retroarch: "Sony - PlayStation 3"
+  PS4:
+    retroarch: "Sony - PlayStation 4"
+  PSP:
+    retroarch: "Sony - PlayStation Portable"
+    muos: "Sony Playstation Portable"
+  PSV:
+    retroarch: "Sony - PlayStation Vita"
+  SVI318:
+    retroarch: "Spectravideo - SVI-318 - SVI-328"
+  3DO:
+    retroarch: "The 3DO Company - 3DO"
+  CreatiVision:
+    retroarch: "VTech - CreatiVision"
+  VSmile:
+    retroarch: "VTech - V.Smile"
+  Supervision:
+    retroarch: "Watara - Supervision"
 
 alias:
   FS: NES

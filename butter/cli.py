@@ -1,6 +1,6 @@
 from posixpath import splitext
 import sys
-from os import walk
+from os import walk, rename
 from os.path import basename, normpath, join
 import PIL
 
@@ -21,9 +21,6 @@ def main():
 	for root, dirs, files in walk(args.path):
 		game_dir = basename(normpath(root))
 
-		if game_dir == 'Imgs':
-			continue
-
 		for file in files:
 			file_ext = splitext(file)[1].lower()
 			if file_ext not in conf['include']['filetypes']:
@@ -33,21 +30,23 @@ def main():
 
 			file_path = join(root, file)
 
-			check = check_for_existing(f"{root}/Imgs/{remove_ext(file)}.png", args.replace)
+			detected = detect_game(file_path, game_dir, possibles, conf)
+
+			directory = 'Imgs' if args.interactive is not None else f"{detected['muos']}/box" 
+
+			check = check_for_existing(f"{root}/{directory}/{remove_ext(file)}.png", args.replace)
 			if check:
 				continue
 
-			detected = detect_game(file_path, game_dir, possibles, conf)
-
-			if detected is not None and len(detected) > 0:
+			if detected['results'] is not None and len(detected['results']) > 0:
 				selected = None
 				if args.interactive:
-					selected = get_user_choice(detected)
+					selected = get_user_choice(detected['results'])
 
 				try:
 					create_image(
-						generate_variants(detected[selected] if selected is not None else detected[0]),
-						f"{root}/Imgs",
+						generate_variants(detected['results'][selected] if selected is not None else detected['results'][0]),
+						f"{root}/{directory}",
 						remove_ext(file)
 					)
 				except PIL.UnidentifiedImageError:
